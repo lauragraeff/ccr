@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@import "bootstrap-icons/font/bootstrap-icons";
+
 body {
   background-color: #2A2E35
 }

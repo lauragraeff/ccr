@@ -2,27 +2,26 @@ export default function Table() {
   return (
     <>
       <div>
-        <table className="bg-[#1e1e1e] mt-7.5 mx-18 text-white montserrat border-spacing-x-6">
+        <div className="bg-[#1e1e1e] mt-7.5 mx-9 sm:mt-7.5 sm:mx-18 text-white montserrat rounded-sm">
           {/* Cabeçalho da tabela */}
-          <thead>
+          <div>
             {/* Título da tabela */}
-            <tr className="">
-              <th colSpan={3} className="">
+            <div className="border-b border-b-[#2A2E35]">
                 <div className="flex justify-between items-center gap-10">
-                  <h2 className="sm:text-[16px] lg:text-[26px] p-4">
+                  <h2 className="sm:text-[16px] lg:text-[26px] p-2 m-5">
                     Tipos de caminhões cadastrados
                   </h2>
-                  <button className="p-4">+ Cadastrar caminhão</button>
+                  <button className="bg-[#00A03C33] py-2 px-4 border border-[#00A03C] m-5 hover:bg-[#00A03CB2] hover:cursor-pointer rounded-sm">+ Cadastrar caminhão</button>
                 </div>
-              </th>
-            </tr>
+
+            </div>
 
             {/* Títulos colunas tabela */}
-            <tr>
-              <th>Nome do tipo de caminhão</th>
-              <th>Opções</th>
-            </tr>
-          </thead>
+            <div className="flex justify-between py-2 px-4 border-b border-b-[#2A2E35]">
+              <p className="p-4">Nome do tipo de caminhão</p>
+              <p className="p-4">Opções</p>
+            </div>
+          </div>
 
           {/* Corpo da tabela */}
           <tbody>
@@ -37,7 +36,7 @@ export default function Table() {
               <td>ico-menu</td>
             </tr>
           </tbody>
-        </table>
+        </div>
       </div>
     </>
   );

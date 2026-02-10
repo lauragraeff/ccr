@@ -1,25 +1,32 @@
+import { Plus } from "lucide-react";
+
 export default function Table() {
   return (
     <>
       <div>
-        <div className="bg-[#1e1e1e] mt-7.5 mx-9 sm:mx-18 lg:mx-36 xl:mx-72 text-white montserrat rounded-sm">
+        <div className="bg-[#1e1e1e] mt-7.5 mx-9 sm:mx-18 lg:mx-27 xl:mx-36 text-white montserrat rounded-sm">
           {/* Cabeçalho da tabela */}
           <div>
             {/* Título da tabela */}
             <div className="border-b border-b-[#2A2E35] ">
               <div className="flex justify-between items-center">
-                <h2 className="sm:text-[14px] lg:text-[20px] m-4.5 ">
+                <h2 className="sm:text-[14px] lg:text-[18px] m-4.5 ">
                   Tipos de caminhões cadastrados
                 </h2>
-                <button className="bg-[#00A03C33] py-2 px-4 m-4.5 border border-[#00A03C]  hover:bg-[#00A03CB2] hover:cursor-pointer rounded-sm sm:text-[14px] lg:text-[16px]">
+                <button className="bg-[#00A03C33] py-2 px-4 m-4.5 border border-[#00A03C]  hover:bg-[#00A03CB2] hover:cursor-pointer rounded-sm sm:text-[14px] lg:text-[16px] max-sm:hidden">
                   + Cadastrar caminhão
+                </button>
+                <button className="bg-[#00A03C33] py-2 px-4 m-4.5 border border-[#00A03C]  hover:bg-[#00A03CB2] hover:cursor-pointer rounded-sm sm:text-[14px] lg:text-[16px] sm:hidden">
+                  <Plus size={14}/>
                 </button>
               </div>
             </div>
 
             {/* Títulos colunas tabela */}
             <div className="flex justify-between items-center border-b border-b-[#2A2E35] mb-3.5">
-              <p className="sm:text-[14px] lg:text-[16px] m-4.5">Nome do tipo de caminhão</p>
+              <p className="sm:text-[14px] lg:text-[16px] m-4.5">
+                Nome do tipo de caminhão
+              </p>
               <p className="sm:text-[14px] lg:text-[16px] m-4.5">Opções</p>
             </div>
           </div>

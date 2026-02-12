@@ -68,7 +68,7 @@ const menu_items = [
 export default function AppSidebar() {
   return (
     <>
-      <Sidebar collapsible="icon">
+      <Sidebar collapsible="icon" className="dark text-white">
         <SidebarHeader> 
           <div className="m-1">
             <CustomTrigger />

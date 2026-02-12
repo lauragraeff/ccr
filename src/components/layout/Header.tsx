@@ -1,17 +1,20 @@
 import avatar from "@/assets/avatar.jpg";
 import { CustomTrigger } from "@/features/sidebar/CustomTrigger";
 import { useIsMobile } from "@/hooks/use-mobile";
-import classNames from 'classnames';
+import classNames from "classnames";
 export default function Header() {
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
 
   return (
     <>
       {/* Cabeçalho */}
       <div className="bg-[#1e1e1e] text-white montserrat p-4 flex justify-between">
-      <div className={classNames("flex items-center",isMobile ? "" : "hidden")}>
-        <CustomTrigger />
-      </div>
+        <div
+          className={classNames("flex items-center", isMobile ? "" : "hidden")}
+        >
+          <CustomTrigger />
+        </div>
+
         {/* Usuário e avatar */}
         <div className="flex gap-1">
           {/* Usuário */}

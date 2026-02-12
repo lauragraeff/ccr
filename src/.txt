@@ -1,31 +1,17 @@
 import { Plus } from "lucide-react";
-import { useState, useEffect } from "react";
-import { useCookies, CookiesProvider } from "react-cookie";
-import axios from 'axios'
-
-type Caminhao = {
-  id: number;
-  name: string;
-  image: string
-  file_name: string
-  active: boolean
-};
+import { useState } from "react";
 
 export default function Table() {
-  const [caminhoes, setCaminhoes] = useState<Caminhao[]>([]);
-  // const [cookies, setCookie, removeCookie] = useCookies(['ACCESS_TOKEN_COOKIE_KEY']);
-  // const token = cookies;
-  useEffect(() => {
-    axios.get("http://192.168.155.60:5001/truck-types", {
-    // withCredentials: true      
-}).then((res) => {
-  console.log('Caminhões: ', res.data);
-  
-    setCaminhoes(res.data)
-})
-  }, []);
+  const [data] = useState([
+    { id: 1, nome: "Julieta0" },
+    { id: 2, nome: "Julieta1" },
+    { id: 3, nome: "Julieta2" },
+    { id: 4, nome: "Julieta3" },
 
-  return (<>
+  ]);
+
+  return (
+    <>
       <div>
         <div className="bg-[#1e1e1e] mt-7.5 mx-9 sm:mx-18 lg:mx-27 xl:mx-36 text-white montserrat rounded-sm">
           {/* Cabeçalho da tabela */}
@@ -58,18 +44,16 @@ export default function Table() {
           <div className="pb-5">
             {/* Registros */}
             
-            {caminhoes.map((caminhao) => (
+            {data.map((item) => (
               <div
-                key={caminhao.id}
+                key={item.id}
                 className="bg-[#2A2E35] flex justify-between items-center mx-4.5 mb-1.25 rounded-sm"
               >
-                <p className="m-2">{caminhao.name}</p>
+                <p className="m-2">{item.nome}</p>
                 <i className="bi bi-list text-[18px] m-2 hover:text-[#00A03CB2] hover:cursor-pointer"></i>
               </div>
             ))}
           </div>
-
-
 
           {/* Se não houver registros hook*/}
           {/* <tr>
@@ -79,6 +63,3 @@ export default function Table() {
       </div>
     </>
   );
-}
-
-
